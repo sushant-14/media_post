@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+}
+
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #090909;
+    padding: 20px;
+    #main-part{
+        min-height: 85vh;
+        
+    }
+}
+
+// h1{
+//     font-family: monospace;
+// }
+
+// header{
+//     font-family: cursive;
+// }
+
+// footer{
+//     font-weight: 900;
+// }
+

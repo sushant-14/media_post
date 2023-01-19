@@ -1,0 +1,79 @@
+#home-container{
+    display: flex;
+    font-size: 25px;
+    // background-color: #1f2327;
+    // color: #fff;
+    #feed-posts{
+        width: 70%;
+        padding: 10px;
+        background-color: lightpink;
+        h4{
+            text-align: center;
+            padding: 10px;
+            border-bottom: 2px solid #1f2327;
+        }
+        #new-post-form{
+            text-align: center;
+            margin: 10px;
+            border-bottom: 2px solid black;
+            textarea{
+                width: 100%;
+                font-size: 20px;
+                line-height: 1.4em;
+                padding: 5px 8px;
+                transition: 0.2s ease 0s;
+                border-radius: 6px;
+                border-style: none solid solid none;
+                border-width: medium 1px 1px medium;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
+                color: #555555;
+                &:focus{
+                        background: none repeat scroll 0 0 lightcyan;
+                        outline-width: 0;
+                }
+            }
+            input[type=submit]{
+                background-color: gray;
+                font-size: 20px;
+                border: none;
+                color: white;
+                padding: 10px 40px;
+                margin: 4px 2px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    #user-friends{
+        width: 30%;
+        padding: 10px;
+        color: #fff;
+        border-left: 2px dashed #fff;
+        text-transform: capitalize;
+        // background-color: 
+        background-color: #1f2327;
+        h4{
+            text-align: center;
+            border-bottom: 2px solid #fff;
+            padding: 10px;
+        }
+        .friends-list-item{
+            padding: 20px;
+            p{
+                padding-bottom: 10px;
+                a{
+                    text-decoration: none;
+                    font-family: cursive;
+                    color: #fff;
+                    &:hover{
+                        background-color: aqua;
+                        color: black;
+                    }    
+                }
+            }
+        }
+        // height: 100%;
+    }
+
+}

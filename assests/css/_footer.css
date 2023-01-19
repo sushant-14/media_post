@@ -1,0 +1,29 @@
+footer .container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  font-size: 25px; }
+
+footer .navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f2327;
+  padding-block: 15px; }
+  footer .navbar a {
+    text-decoration: none;
+    color: #fff; }
+    footer .navbar a:hover {
+      background-color: aqua;
+      color: black; }
+  footer .navbar .logo {
+    margin-right: 30px; }
+  footer .navbar .list {
+    list-style: none;
+    display: flex;
+    gap: 25px; }
+
+footer .copyright {
+  color: white;
+  text-align: center; }

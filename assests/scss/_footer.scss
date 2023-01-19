@@ -1,0 +1,38 @@
+footer{
+    .container{
+        max-width: 100%;
+        margin:0 auto;
+        padding: 15px;
+        font-size: 25px;
+    }
+    .navbar{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #1f2327;
+        padding-block: 15px;
+        a{
+            text-decoration: none;
+            color: #fff;
+            &:hover{
+                background-color: aqua;
+                color: black;
+            }
+        }
+        .logo{
+            margin-right: 30px;
+        }
+        .list{
+            list-style: none;
+            display: flex;
+            gap:25px;
+        }
+        
+        
+    }
+    .copyright{
+        color:white;
+        text-align: center;
+    }
+}

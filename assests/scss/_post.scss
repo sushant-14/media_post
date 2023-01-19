@@ -1,0 +1,92 @@
+#posts-list-container{
+    ul{
+        list-style-type: none;
+        li{
+            background-color: rgba($color: #1f2327, $alpha: 0.7 );
+            a{
+                text-decoration: none;
+                color: #fff;
+                float: right;
+                padding: 10px;
+            }
+            .post-content{
+                margin: 10px;   
+                font-size: 25px;
+                padding: 5px;
+                color: #fff;
+                 display: flex;
+                justify-content: space-between;
+                small{
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    border: 2px solid wheat;
+                    padding:2px 7px;
+                    margin: 5px;
+                    border-radius: 10px;
+                }
+            }
+            .posts-comments{
+                width: 50%;
+                margin: auto;
+                margin-top: 1%;
+                margin-bottom: 1%;
+                background-color: rgba($color: #1f2327, $alpha: 0.5 );
+                border: 2px solid black;
+                padding: 10px;
+                #new-post-comment{
+                    text-align: center;
+                    
+                    input[type=text]{
+                        border: none;
+                        border-radius: 10px;
+                        padding: 5px 10px;
+                        &:focus{
+                            outline-width: 0;
+                            background-color: paleturquoise;
+                        }
+                    }
+                    input[type=submit]{
+                        background-color: gray;
+                        font-size:16px;
+                        border: none;
+                        color: white;
+                        padding:5px 10px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition:all 0.2ms ease-in-out;    
+                        &:hover{
+                            background-color: #1f2327;
+                            color: white;
+                        }
+                    }
+                    
+                }
+                .post-comments-list{
+                    background-color: rgba($color: #1f2327, $alpha: 0.5 );
+                    
+                    .comment-content{
+                        font-size: 16px;
+                        padding: 10px;
+                        margin: 8px;
+                        color: #fff;
+                        display: flex;
+                        justify-content: space-between;
+                        small{
+                            font-size: 12px;
+                            text-transform: capitalize;
+                            border: 2px solid wheat;
+                            // display: inline;
+                            padding:2px 7px;
+                            float: right;
+                            // margin-top: 20px;
+                            border-radius: 10px;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+
+}

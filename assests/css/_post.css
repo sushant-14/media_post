@@ -1,0 +1,68 @@
+#posts-list-container ul {
+  list-style-type: none; }
+  #posts-list-container ul li {
+    background-color: rgba(31, 35, 39, 0.7); }
+    #posts-list-container ul li a {
+      text-decoration: none;
+      color: #fff;
+      float: right;
+      padding: 10px; }
+    #posts-list-container ul li .post-content {
+      margin: 10px;
+      font-size: 25px;
+      padding: 5px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between; }
+      #posts-list-container ul li .post-content small {
+        font-size: 14px;
+        text-transform: capitalize;
+        border: 2px solid wheat;
+        padding: 2px 7px;
+        margin: 5px;
+        border-radius: 10px; }
+    #posts-list-container ul li .posts-comments {
+      width: 50%;
+      margin: auto;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      background-color: rgba(31, 35, 39, 0.5);
+      border: 2px solid black;
+      padding: 10px; }
+      #posts-list-container ul li .posts-comments #new-post-comment {
+        text-align: center; }
+        #posts-list-container ul li .posts-comments #new-post-comment input[type=text] {
+          border: none;
+          border-radius: 10px;
+          padding: 5px 10px; }
+          #posts-list-container ul li .posts-comments #new-post-comment input[type=text]:focus {
+            outline-width: 0;
+            background-color: paleturquoise; }
+        #posts-list-container ul li .posts-comments #new-post-comment input[type=submit] {
+          background-color: gray;
+          font-size: 16px;
+          border: none;
+          color: white;
+          padding: 5px 10px;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.2ms ease-in-out; }
+          #posts-list-container ul li .posts-comments #new-post-comment input[type=submit]:hover {
+            background-color: #1f2327;
+            color: white; }
+      #posts-list-container ul li .posts-comments .post-comments-list {
+        background-color: rgba(31, 35, 39, 0.5); }
+        #posts-list-container ul li .posts-comments .post-comments-list .comment-content {
+          font-size: 16px;
+          padding: 10px;
+          margin: 8px;
+          color: #fff;
+          display: flex;
+          justify-content: space-between; }
+          #posts-list-container ul li .posts-comments .post-comments-list .comment-content small {
+            font-size: 12px;
+            text-transform: capitalize;
+            border: 2px solid wheat;
+            padding: 2px 7px;
+            float: right;
+            border-radius: 10px; }
