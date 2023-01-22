@@ -53,6 +53,7 @@ module.exports.update=function(req,res){
             return res.redirect('back');
         })
     }else{
+        req.flash('error', 'Unauthorized!');
        return res.status(401).send('Unauthorized') ;
     }
 }
@@ -74,23 +75,28 @@ module.exports.update=function(req,res){
 // }
 module.exports.create=function(req,res){
     if (req.body.password != req.body.confirm_password){
+        req.flash('error', 'Passwords do not match');
         return res.redirect('back');
     }
     User.findOne({email:req.body.email},function(err,user){
         if(err){
-            console.log("error in finding user signing up");
+            // console.log("error in finding user signing up");
+            req.flash('error', err); 
             return
         }
         if(!user){
             User.create(req.body,function(err,user){
                 if(err){
-                    console.log('error in creating');
+                    req.flash('error', err); 
+                    // console.log('error in creating');
                     return;
                 }
                 return res.redirect('/users/sign-in')
             })
         }
         else{
+            req.flash('success', 'You have signed up, login to continue!');
+            
             return res.redirect('back')
         }
     })

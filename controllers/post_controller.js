@@ -21,7 +21,7 @@ module.exports.create=async function(req,res){
             content:req.body.content,
             user: req.user._id
        });
-    //    post = await post.populate('user');
+       post = await post.populate('user');
        if(req.xhr){
         return res.status(200).json({
             data:{
@@ -35,7 +35,7 @@ module.exports.create=async function(req,res){
         return res.redirect('back');
 
     }catch(err){
-        req.flash('error','You have an error for creating a new post')
+        req.flash('error',err)
         return res.redirect('back');
         // console.log('error in creation post',err)
     }  
@@ -66,7 +66,9 @@ module.exports.destroy=async function(req,res){
         if(post.user==req.user.id){
             
             post.remove();
+            
             await Comment.deleteMany({post:req.params.id});
+
             // if(req.xhr){
             //     return res.status(200).json({
             //         data:{

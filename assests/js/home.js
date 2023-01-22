@@ -14,7 +14,8 @@
                     let newPost = newPostDom(data.data.post);
                     // prepend is a function in a jquery to add a item in first position
                     //  and when write append they add in last 
-                    $('#posts-list-container>ul').prepend(newPost)
+                    $('#posts-list-container>ul').prepend(newPost);
+                    deletePost($(' .delete-post-button',newPost));
                 }, error: function (error) {
                     console.log(error.responseText);
                 }
@@ -24,10 +25,11 @@
     }
     // method to create apost in DOM
     let newPostDom = function(post) {
+        // console.log("post",post)
         return $(`<li id="post-${post._id}">
         <p>
            <small>
-                <a class="delete-post-button" href="/posts/destroy/${post.id}"><i class="fa fa-close" style="font-size:24px"></i></a>
+                <a class="delete-post-button" href="/posts/destroy/${post._id}"><i class="fa fa-close" style="font-size:24px"></i></a>
             </small>
             <div class="post-content">
             ${post.content}
@@ -55,6 +57,27 @@
         <hr>
     </li>`)
     }
+
+    // method to delta a post frm DOM
+    // let deletePost=function(deleteLink){
+    //     $(deleteLink).click(function(e){
+    //         e.preventDefault();
+
+    //         $.ajax({
+    //             type:'get',
+    //             url:$(deleteLink).prop('href'),
+    //             success:function(data){
+    //                 $(`$post-${data.data.post_id}`).remove();
+
+    //             },error:function(error){
+    //                 console.log(error.responseText);
+
+    //             }
+    //         })
+    //     })
+    // }
+
+
 
     createPost();
 

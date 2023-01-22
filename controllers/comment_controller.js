@@ -31,11 +31,11 @@ module.exports.create=async function(req,res){
             post.save();
             req.flash('success','You have create a new comment')
         
-             return res.redirect('/')
+            return res.redirect('/')
         }
     }catch(err){
         req.flash('error','You have an error for creating a new comment')
-       
+       return;
         // console.log('error in comment creation',err)
         }    
 }
@@ -62,18 +62,19 @@ module.exports.destroy=async function(req,res){
         if(comment.user==req.user.id){
             let postId=comment.post;
             comment.remove();
-            await Post.findByIdAndUpdate(postId,{$pull:{comments:req.params.id}})
+            // await Post.findByIdAndUpdate(postId,{$pull:{comments:req.params.id}})
+            let post= Post.findByIdAndUpdate(postId,{ $pull: {comments: req.params.id}})
             req.flash('success','Comments deleted!');  
            
-                return res.redirect('back');    
+            return res.redirect('back');    
         }else{
-
+            req.flash('error', 'Unauthorized');
             return res.redirect('back');  
         }
 
     }catch(err){
-        req.flash('error','You have an error for deleteing a comment')
-       
+        req.flash('error',err)
+        return;
         // console.log('error in comment destroy',err)
     }
 
