@@ -4,7 +4,10 @@
         <div class="menu">
             <ul class="list">
                 <li><a href="/">Home</a></li>
-                <li><a href="/users/about/<%=u.id%>">About</a></li>
+                <%if(locals.user!=undefined){%>
+                <li><a href="/users/about/<%=locals.user._id%>">About</a></li>
+                <%}%>
+               
             </ul>
         </div>
 

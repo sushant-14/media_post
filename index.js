@@ -37,6 +37,9 @@ app.use(sassMiddleware({
 app.use(cookieParser())
 
 app.use(express.static('./assests'));
+
+// make the upload path avialable to browser avatar
+app.use('/uploads',express.static(__dirname +'/uploads'));
 // use layout
 app.use(ejsLayout);
 
