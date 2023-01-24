@@ -1,5 +1,7 @@
 const Post= require('../models/post');
 const Comment= require('../models/comment');
+// const fs=require('fs');
+// const path=require('path');
 
 // module.exports.create=function(req,res){
 //    Post.create({
@@ -40,6 +42,45 @@ module.exports.create=async function(req,res){
         // console.log('error in creation post',err)
     }  
 }
+// module.exports.create=async function(req,res){
+//     try{
+//             let post = await Post.create({
+//                 content:req.body.content,
+//                 avatar:req.avatar,
+//                 user: req.user._id
+//            });
+//         //    Post.uploadAvatar(req,res,function(err){
+//         //     if(err){console.log('****Multer Error b',err)}
+//         //     content=req.body.content
+//         //     avatar=req.avatar
+//         //     user=req.user._id
+//         //        if(req.file){
+//         //            console.log("dds",req.file)
+//         //        }
+
+//         //    })
+
+       
+//        console.log('post',post)
+//        post = await post.populate('user');
+//        if(req.xhr){
+//         return res.status(200).json({
+//             data:{
+//                 post:post
+//             },
+//             message:'Post created!'
+//         });
+//        }
+
+//        req.flash('success','You have create a new post')
+//         return res.redirect('back');
+
+//     }catch(err){
+//         req.flash('error',err)
+//         return res.redirect('back');
+//         // console.log('error in creation post',err)
+//     }  
+// }
 
 
 
