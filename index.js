@@ -3,6 +3,7 @@ const cookieParser=require('cookie-parser');
 const bodyParser=require('body-parser');
 const app=express();
 const port= 8007;
+
 // set layout
 const ejsLayout=require('express-ejs-layouts');
 
@@ -12,6 +13,7 @@ const db=require('./config/mongoose')
 const session = require('express-session');
 const passport=require('passport');
 const passportLocal=require('./config/passport-local');
+const passportJWT=require('./config/passport-jwt-strategy');
 // not use the session beacause update is are and goto session part on this page
 const MongoStore=require('connect-mongo');
 const model=require('./models/user');
