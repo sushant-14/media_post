@@ -14,6 +14,7 @@ const session = require('express-session');
 const passport=require('passport');
 const passportLocal=require('./config/passport-local');
 const passportJWT=require('./config/passport-jwt-strategy');
+const passportGoogle=require('./config/passport.google.oauth2-strategy');
 // not use the session beacause update is are and goto session part on this page
 const MongoStore=require('connect-mongo');
 const model=require('./models/user');
