@@ -34,10 +34,6 @@ module.exports.destroy=async function(req,res){
                 message:"you cannot delete this post!"
             })
         }
-
-
-
-
     }
     catch(err){
         console.log('****************',err);

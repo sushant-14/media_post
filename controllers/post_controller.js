@@ -33,7 +33,7 @@ module.exports.create=async function(req,res){
         });
        }
 
-       req.flash('success','You have create a new post')
+       req.flash('success','Post published')
         return res.redirect('back');
 
     }catch(err){
