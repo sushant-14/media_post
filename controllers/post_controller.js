@@ -1,5 +1,6 @@
 const Post= require('../models/post');
 const Comment= require('../models/comment');
+const postMailer=require('../mailers/posts_mailer');
 // const fs=require('fs');
 // const path=require('path');
 
@@ -24,6 +25,7 @@ module.exports.create=async function(req,res){
             user: req.user._id
        });
        post = await post.populate('user');
+       postMailer.newPost(post);
        if(req.xhr){
         return res.status(200).json({
             data:{
