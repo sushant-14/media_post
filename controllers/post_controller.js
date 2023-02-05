@@ -1,6 +1,8 @@
 const Post= require('../models/post');
 const Comment= require('../models/comment');
 const postMailer=require('../mailers/posts_mailer');
+const postEmailWorker=require('../workers/post_email_worker');
+const queue=require('../config/kue')
 // const fs=require('fs');
 // const path=require('path');
 
@@ -25,7 +27,14 @@ module.exports.create=async function(req,res){
             user: req.user._id
        });
        post = await post.populate('user');
-       postMailer.newPost(post);
+    //    postMailer.newPost(post);
+       let job = queue.create('emails',post).save(function(err){
+        if(err){
+            console.log('error in creating a queue post',err);
+            return;
+        }
+        console.log('job enqueued post',job.id)
+       })
        if(req.xhr){
         return res.status(200).json({
             data:{

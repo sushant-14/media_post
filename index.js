@@ -18,7 +18,7 @@ const passportGoogle=require('./config/passport.google.oauth2-strategy');
 // not use the session beacause update is are and goto session part on this page
 const MongoStore=require('connect-mongo');
 const model=require('./models/user');
-
+const kue=require('kue');
 // setting sass
 const sassMiddleware=require('node-sass-middleware');
 
@@ -104,3 +104,6 @@ app.listen(port,function(err){
     }
     console.log(`server is running on port ${port}`);
 });
+
+
+kue.app.listen(4000);
