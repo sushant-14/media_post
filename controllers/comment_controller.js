@@ -3,6 +3,7 @@ const Post = require('../models/post');
 const commentMailer=require('../mailers/comments_mailer');
 const commentEmailWorker= require('../workers/comment_email_worker');
 const queue = require('../config/kue');
+const Like=require('../models/like')
 
 // module.exports.create=function(req,res){
 //     Post.findById(req.body.post,function(err,post){
@@ -43,9 +44,19 @@ module.exports.create=async function(req,res){
                 }
                 console.log('job enqueued',job.id)
             });
-
-            req.flash('success','You have create a new comment')
-        
+        //    ...
+            if (req.xhr){
+                
+    
+                return res.status(200).json({
+                    data: {
+                        comment: comment
+                    },
+                    message: "Post created!"
+                });
+            }
+            // ...
+            req.flash('success', 'Comment published!');
             return res.redirect('/')
         }
     }catch(err){
@@ -78,7 +89,20 @@ module.exports.destroy=async function(req,res){
             let postId=comment.post;
             comment.remove();
             // await Post.findByIdAndUpdate(postId,{$pull:{comments:req.params.id}})
-            let post= Post.findByIdAndUpdate(postId,{ $pull: {comments: req.params.id}})
+            let post= Post.findByIdAndUpdate(postId,{ $pull: {comments: req.params.id}});
+            // destroy the associated likes for this comment
+            await Like.deleteMany({likeable:comment._id, onModel: 'Comment'})
+            // ...
+              // send the comment id which was deleted back to the views
+              if (req.xhr){
+                return res.status(200).json({
+                    data: {
+                        comment_id: req.params.id
+                    },
+                    message: "Post deleted"
+                });
+            }
+            // ...
             req.flash('success','Comments deleted!');  
            
             return res.redirect('back');    

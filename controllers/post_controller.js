@@ -2,7 +2,8 @@ const Post= require('../models/post');
 const Comment= require('../models/comment');
 const postMailer=require('../mailers/posts_mailer');
 const postEmailWorker=require('../workers/post_email_worker');
-const queue=require('../config/kue')
+const queue=require('../config/kue');
+const Like = require('../models/like')
 // const fs=require('fs');
 // const path=require('path');
 
@@ -116,19 +117,25 @@ module.exports.destroy=async function(req,res){
         let post= await Post.findById(req.params.id);
         // .id means converting the object id into string
         if(post.user==req.user.id){
-            
+
+            // delete the associated likes for the post and all its comments likes too
+            await Like.deleteMany({likeable:post, onModel:'Post'});
+            await Like.deleteMany({_id:{$in: post.comments}})
+
             post.remove();
             
             await Comment.deleteMany({post:req.params.id});
+// ..
+            if (req.xhr){
+                return res.status(200).json({
+                    data: {
+                        post_id: req.params.id
+                    },
+                    message: "Post deleted"
+                });
+            }
 
-            // if(req.xhr){
-            //     return res.status(200).json({
-            //         data:{
-            //             post_id: req.params.id
-            //         },
-            //         message: "Post deleted"
-            //     });
-            // }
+  // ..
             req.flash('success','Post and associated comments deleted!');
             return res.redirect('back');
         }
