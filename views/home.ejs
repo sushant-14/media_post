@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/_post.css">
+<link rel="stylesheet" href="/css/chat_box.css">
 
 <div id="home-container">
     <section id="feed-posts">
-        <!-- <h2>home<%=title%></h2> -->
         <h4>Posts</h4>
         <% if(locals.user){%>
         <form action="/posts/create" id="new-post-form" method="POST">
@@ -34,13 +34,14 @@
                 <%}%>
 
         </div>
+        <%- include('_chat_box') -%>
     </section>
 </div>
 
 
 <!-- importing this script for creating the comments -->
-<script src="/js/home_post_comments.js" ></script>
-<script src="/js/home.js"></script>
+<!-- here is also two folder of js for ajax request in js file name is home.js and home_post_comment.js -->
+<!-- include both file for ajax means page is not refresh-->
 
 <!-- CHANGE :: import the script file for toggle likes, also run it over for the already present posts and comments on the page -->
 <script src="js/toggle_likes.js"></script>
@@ -50,6 +51,14 @@
         let toggleLike = new ToggleLike(self);
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js" integrity="sha512-rwu37NnL8piEGiFhe2c5j4GahN+gFsIn9k/0hkRY44iz0pc81tBNaUN56qF8X4fy+5pgAAgYi2C9FXdetne5sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/chat_engine.js"></script>
+<!-- frontend stablish for creating a connection -->
+<% if (locals.user){ %>
+<script>
+    new ChatEngine('user-chat-box', '<%= locals.user.email %>')
+</script>
+<% } %>
 
 
 

@@ -31,6 +31,7 @@ class PostComments{
                 type: 'post',
                 url: '/comments/create',
                 data: $(self).serialize(),
+                cache: false,
                 success: function(data){
                     let newComment = pSelf.newCommentDom(data.data.comment);
                     $(`#post-comments-${postId}`).prepend(newComment);
@@ -61,8 +62,7 @@ class PostComments{
         // CHANGE :: show the count of zero likes on this comment
 
         return $(`<li id="comment-${ comment._id }">
-                        <p>
-                            
+                        <p>     
                             <small>
                                 <a class="delete-comment-button" href="/comments/destroy/${comment._id}">X</a>
                             </small>
@@ -81,7 +81,6 @@ class PostComments{
                             </small>
 
                         </p>    
-
                 </li>`);
     }
 
@@ -93,6 +92,7 @@ class PostComments{
             $.ajax({
                 type: 'get',
                 url: $(deleteLink).prop('href'),
+                cache: false,
                 success: function(data){
                     $(`#comment-${data.data.comment_id}`).remove();
 

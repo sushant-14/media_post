@@ -10,12 +10,19 @@
                 type: 'post',
                 url: '/posts/create',
                 data: newPostForm.serialize(),
+                cache: false,
                 success: function (data) {
                     // console.log("data",data)
                     let newPost = newPostDom(data.data.post);
                     // prepend is a function in a jquery to add a item in first position
                     //  and when write append they add in last 
                     $('#posts-list-container>ul').prepend(newPost);
+
+                    // Apply CSS styles to the new post
+                    newPost.find('.delete-post-button').css({
+                        'font-size': '24px',
+                        'color': 'red'
+                    });
                     deletePost($(' .delete-post-button',newPost));
 
                     // ...
@@ -48,13 +55,13 @@
         return $(`<li id="post-${post._id}">
         <p>
            <small>
-                <a class="delete-post-button" href="/posts/destroy/${post._id}"><i class="fa fa-close" style="font-size:24px"></i></a>
+                <a class="delete-post-button" href="/posts/destroy/${ post._id }"><i class="fa fa-close" style="font-size:24px"></i></a>
             </small>
-            <div class="post-content">
-            ${post.content}
+
+          ${ post.content }
                 <br>
                 <small>
-                ${post.user.name}
+                ${ post.user.name }
                 </small>
                 <br>
                 <small>
@@ -63,19 +70,19 @@
                     </a>
 
                 </small>
-            </div>
+          
         </p>
     
         <div class="posts-comments">
-                <form action="/comments/create" id="new-post-comment" method="POST">
+                <form action="/comments/create" id="post-${ post._id }-comments-form" method="POST" class="new-post-comment">
                     <input type="text" name="content" placeholder="type here comment..." required>
-                    <input type="hidden" name="post" value="${post._id}">
-                    <input type="submit" value="Comment">
+                    <input type="hidden" name="post" value="${ post._id }">
+                    <input type="submit" value="Add Comment">
                 </form>
     
         
         <div class="post-comments-list">
-            <ul id="post-comments-${post._id}">
+            <ul id="post-comments-${ post._id }">
               
             </ul>
         </div>
@@ -113,6 +120,7 @@
             $.ajax({
                 type: 'get',
                 url: $(deleteLink).prop('href'),
+                cache: false,
                 success: function(data){
                     $(`#post-${data.data.post_id}`).remove();
                     new Noty({

@@ -38,12 +38,14 @@ module.exports.home=async function(req,res){
             populate:{
                 path:'user'
             },
-            // add the like portion
+        })
+        .populate({
+            path:'likes',
             populate:{
-                path: 'likes'
+                path:'user'
             }
-        }).populate('likes');
-        
+        })
+        console.log("ppp",posts)
         let users= await User.find({});
 
         return res.render('home', {

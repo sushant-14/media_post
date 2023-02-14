@@ -27,6 +27,7 @@ module.exports.create=async function(req,res){
             content:req.body.content,
             user: req.user._id
        });
+       console.log("pp",post.user.name)
        post = await post.populate('user');
     //    postMailer.newPost(post);
        let job = queue.create('emails',post).save(function(err){

@@ -15,6 +15,7 @@ class ToggleLike{
             $.ajax({
                 type: 'POST',
                 url: $(self).attr('href'),
+                cache: false,
             })
             .done(function(data) {
                 let likesCount = parseInt($(self).attr('data-likes'));

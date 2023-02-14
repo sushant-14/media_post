@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 // const multer = require('multer');
 // const path= require('path');
 // const AVATAR_PATH = path.join('/uploads/posts/avatars')
@@ -16,12 +17,12 @@ const postSchema= new mongoose.Schema({
         ref:'User'
     },
     // include the array of ids of all comments in this post schema itself
-    comments:[
+    comments:
         {
-            type:mongoose.Schema.Types.ObjectId,
+            type:[mongoose.Schema.Types.ObjectId],
             ref:'Comment'
         }
-    ],
+    ,
     // add likes for 
     likes:[
         {
