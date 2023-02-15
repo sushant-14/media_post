@@ -1,4 +1,5 @@
 const express=require('express');
+const env= require('./config/environment')
 const cookieParser=require('cookie-parser');
 const bodyParser=require('body-parser');
 const app=express();
@@ -31,10 +32,14 @@ const chatScokets=require('./config/chat_socket').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat server is listing on port 5000');
 
+const path = require('path')
+
 // setting sass
 app.use(sassMiddleware({
-    src:'./assests/scss',
-    dest:'./assests/css',
+    // src:'./assests/scss',
+    src:path.join(__dirname,env.assest_path,'scss'),
+    // dest:'./assests/css',
+    dest:path.join(__dirname,env.assest_path,'css'),
     debug:true,
     outputStyle:'extended',
     prefix:'/css'
@@ -45,7 +50,10 @@ app.use(sassMiddleware({
 
 app.use(cookieParser())
 
-app.use(express.static('./assests'));
+// cut the assests and use in the enviormnent for config
+// app.use(express.static('./assests'));
+app.use(express.static(env.assest_path));
+
 
 // make the upload path avialable to browser avatar
 app.use('/uploads',express.static(__dirname +'/uploads'));
@@ -69,7 +77,8 @@ app.set('views','./views');
 // mongo store is used to store the session cookie in the db
 app.use(session({
     name:'Codial',
-    secret:'blahsomething',
+    secret: env.session_cookie_key,
+    // secret:'blahsomething',
     saveUninitialized:false,
     resave:false,
     cookie:{
