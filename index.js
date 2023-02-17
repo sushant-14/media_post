@@ -3,7 +3,7 @@ const env= require('./config/environment')
 const cookieParser=require('cookie-parser');
 const bodyParser=require('body-parser');
 const app=express();
-const port= 8007;
+const port= process.env.port;
 
 // set layout
 const ejsLayout=require('express-ejs-layouts');
@@ -32,7 +32,7 @@ const chatScokets=require('./config/chat_socket').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat server is listing on port 5000');
 
-const path = require('path')
+const path = require('path');
 
 // setting sass
 app.use(sassMiddleware({
