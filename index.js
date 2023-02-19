@@ -1,10 +1,10 @@
 const express=require('express');
-const env= require('./config/environment')
+const env= require('./config/environment');
+const logger=require('morgan');
 const cookieParser=require('cookie-parser');
 const bodyParser=require('body-parser');
 const app=express();
 const port= process.env.port;
-
 // set layout
 const ejsLayout=require('express-ejs-layouts');
 
@@ -21,7 +21,7 @@ const MongoStore=require('connect-mongo');
 const model=require('./models/user');
 const kue=require('kue');
 // setting sass
-const sassMiddleware=require('node-sass-middleware');
+const sassMiddleware=require('node-sass-middleware');   
 
 const flash=require('connect-flash');
 const customMware=require('./config/middleware');
@@ -35,15 +35,18 @@ console.log('chat server is listing on port 5000');
 const path = require('path');
 
 // setting sass
-app.use(sassMiddleware({
-    // src:'./assests/scss',
-    src:path.join(__dirname,env.assest_path,'scss'),
-    // dest:'./assests/css',
-    dest:path.join(__dirname,env.assest_path,'css'),
-    debug:true,
-    outputStyle:'extended',
-    prefix:'/css'
-}))
+// for development mode we need to run sass middle ware
+if(env.name=='development'){
+    app.use(sassMiddleware({
+        // src:'./assests/scss',
+        src:path.join(__dirname,env.assest_path,'scss'),
+        // dest:'./assests/css',
+        dest:path.join(__dirname,env.assest_path,'css'),
+        debug:true,
+        outputStyle:'extended',
+        prefix:'/css'
+    }))
+}
 
 
 // app.use(express.urlencoded());
@@ -57,6 +60,8 @@ app.use(express.static(env.assest_path));
 
 // make the upload path avialable to browser avatar
 app.use('/uploads',express.static(__dirname +'/uploads'));
+
+app.use(logger(env.morgan.mode, env.morgan.options))
 // use layout
 app.use(ejsLayout);
 
@@ -88,7 +93,7 @@ app.use(session({
     store:MongoStore.create(
         {
             // mongoUrl add and locate the path from mongoose.js
-            mongoUrl:'mongodb://localhost/deve_passport_del',
+            mongoUrl:`mongodb://localhost/${env.db}`,
             mongooseConnection:db,
             autoRemove:'disabled'
         },
