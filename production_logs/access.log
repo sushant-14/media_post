@@ -212,3 +212,5 @@
 ::1 - - [19/Feb/2023:18:44:29 +0000] "POST /likes/toggle/?id=63efbc928f2b7f45397c6749&type=Post HTTP/1.1" 200 61 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
 ::1 - - [19/Feb/2023:18:44:38 +0000] "GET / HTTP/1.1" 200 12513 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
 ::1 - - [19/Feb/2023:18:44:38 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:14:22:09 +0000] "GET / HTTP/1.1" 200 8724 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:14:22:09 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
