@@ -214,3 +214,69 @@
 ::1 - - [19/Feb/2023:18:44:38 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
 ::1 - - [21/Feb/2023:14:22:09 +0000] "GET / HTTP/1.1" 200 8724 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
 ::1 - - [21/Feb/2023:14:22:09 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:10:53 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:10:55 +0000] "GET /users/sign-in HTTP/1.1" 200 3932 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:10:57 +0000] "POST /users/create-session HTTP/1.1" 302 46 "http://localhost:8007/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:10:57 +0000] "GET / HTTP/1.1" 200 12876 "http://localhost:8007/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:11:07 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:11:07 +0000] "GET / HTTP/1.1" 200 14410 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:13:35 +0000] "POST /comments/create HTTP/1.1" 302 46 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:13:35 +0000] "GET / HTTP/1.1" 200 15318 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:14:43 +0000] "POST /comments/create HTTP/1.1" 302 46 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:14:43 +0000] "GET / HTTP/1.1" 200 16217 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:15:18 +0000] "GET /users/sign-out HTTP/1.1" 302 46 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:15:18 +0000] "GET / HTTP/1.1" 200 10971 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:15:22 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:15:26 +0000] "POST /users/create-session HTTP/1.1" 302 46 "http://localhost:8007/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:15:26 +0000] "GET / HTTP/1.1" 200 16225 "http://localhost:8007/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:15:33 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:15:34 +0000] "GET / HTTP/1.1" 200 17758 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:17:09 +0000] "POST /comments/create HTTP/1.1" 302 46 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:17:09 +0000] "GET / HTTP/1.1" 200 18676 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:19:58 +0000] "GET / HTTP/1.1" 200 18321 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:20:06 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [21/Feb/2023:16:20:06 +0000] "GET / HTTP/1.1" 200 20214 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:01:23 +0000] "GET / HTTP/1.1" 200 18365 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:01:29 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:01:31 +0000] "POST /users/create-session HTTP/1.1" 302 46 "http://localhost:8007/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:01:31 +0000] "GET / HTTP/1.1" 200 28640 "http://localhost:8007/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:01:37 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:01:38 +0000] "GET / HTTP/1.1" 200 30171 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:02:52 +0000] "GET / HTTP/1.1" 200 29824 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:02:55 +0000] "POST /comments/create HTTP/1.1" 302 46 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:02:55 +0000] "POST /comments/create HTTP/1.1" 302 46 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:02:56 +0000] "GET / HTTP/1.1" 200 31975 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:06:52 +0000] "POST /comments/create HTTP/1.1" 302 46 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:06:52 +0000] "GET / HTTP/1.1" 200 32874 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:07:09 +0000] "GET / HTTP/1.1" 200 32519 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:07:20 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:07:07:20 +0000] "GET / HTTP/1.1" 200 34410 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+[0mGET / [0m-[0m - ms - -[0m
+[0mGET / [32m200[0m 62.183 ms - 11845[0m
+[0mGET /users/sign-in [36m304[0m 13.387 ms - -[0m
+[0mPOST /users/create-session [36m302[0m 49.642 ms - 46[0m
+[0mGET / [32m200[0m 65.124 ms - 16497[0m
+[0mPOST /posts/create [36m302[0m 42.495 ms - 88[0m
+[0mGET / [32m200[0m 77.570 ms - 18037[0m
+[0mGET / [32m200[0m 158.273 ms - 17690[0m
+[0mGET / [36m304[0m 87.114 ms - -[0m
+[0mPOST /posts/create [36m302[0m 57.713 ms - 88[0m
+[0mGET / [32m200[0m 67.541 ms - 19602[0m
+[0mGET / [32m200[0m 186.188 ms - 19255[0m
+[0mPOST /posts/create [36m302[0m 74.491 ms - 88[0m
+[0mGET / [32m200[0m 91.010 ms - 21158[0m
+[0mPOST /posts/create [36m302[0m 21.721 ms - 88[0m
+[0mGET / [32m200[0m 75.457 ms - 22705[0m
+::1 - - [22/Feb/2023:08:28:21 +0000] "GET / HTTP/1.1" 200 21585 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:28:27 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:28:30 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:28:32 +0000] "POST /users/create-session HTTP/1.1" 302 46 "http://localhost:8007/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:28:33 +0000] "GET / HTTP/1.1" 200 34426 "http://localhost:8007/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:28:38 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:28:38 +0000] "GET / HTTP/1.1" 200 35966 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:31:07 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:31:07 +0000] "GET / HTTP/1.1" 200 37512 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:38:58 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:38:58 +0000] "GET / HTTP/1.1" 200 39056 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:39:02 +0000] "POST /posts/create HTTP/1.1" 302 88 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [22/Feb/2023:08:39:03 +0000] "GET / HTTP/1.1" 200 40603 "http://localhost:8007/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
