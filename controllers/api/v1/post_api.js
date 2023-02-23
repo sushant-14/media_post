@@ -3,6 +3,7 @@ const Comment=require('../../../models/comment');
 
 module.exports.index= async function(req,res){
     let posts= await Post.find({})
+    
         .sort('-createdAt')
         .populate('user')
         .populate({
@@ -11,7 +12,7 @@ module.exports.index= async function(req,res){
                 path:'user'
             }
         });
-    
+    console.log('poooooo',posts)
     return res.json(200,{
         message: 'List of posts',
         posts:posts

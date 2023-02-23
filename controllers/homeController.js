@@ -45,7 +45,7 @@ module.exports.home=async function(req,res){
                 path:'user'
             }
         })
-        console.log("ppp",posts)
+        // console.log("ppp",posts)
         let users= await User.find({});
 
         return res.render('home', {
