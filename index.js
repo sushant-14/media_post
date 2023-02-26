@@ -93,7 +93,7 @@ app.use(session({
     store:MongoStore.create(
         {
             // mongoUrl add and locate the path from mongoose.js
-            mongoUrl:`mongodb://localhost/${env.db}`,
+            mongoUrl:`mongodb+srv://sushant14:Sushant123@cluster0.eaurexw.mongodb.net/${env.db}`,
             mongooseConnection:db,
             autoRemove:'disabled'
         },
