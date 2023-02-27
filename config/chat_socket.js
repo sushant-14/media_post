@@ -18,7 +18,8 @@ module.exports.chatSockets = function(socketServer){
     // let io = require('socket.io')(socketServer);
     let io=require('socket.io')(socketServer, {
         cors: {
-          origin: "http://localhost:8007",
+        //     http: // localhost:8007 space remove
+          origin: "http://18.182.14.78:8007",
           methods: ["GET", "POST"],
           transports: ['websocket', 'polling'],
           allowedHeaders: ["my-custom-header"],
