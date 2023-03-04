@@ -1,25 +1,38 @@
+<link rel="stylesheet" href="/css/user-sign.css">
+<div id="sign">
+  <form action="/users/create-session" method="POST">
+    <h1>user Sign In</h1>
+    <div class="form-field ">
+        <i class='fas fa-user-alt bgcol'></i>
+        <input type="email" name="email" placeholder="Useremail" required />
+    </div>
 
+    <div class="form-field">
+      <i class='fas fa-key bgcol'></i>
+      <input type="password" name="password" placeholder="Password" required />
+    </div>
 
-<div id="sign-in">
+    <div class="form-field">
+      <button class="btn" type="submit">Sign in</button>
+    </div>
 
-    
-    <form action="/users/create-session" method="POST">
-        <h1>user Sign In</h1>
-      <div class="form-field">
-        <input type="email" name="email" placeholder="Email / Username" required/>
+    <div class="form-field">
+      <div class="google-btn">
+        <a href="/users/auth/google">
+          <div class="google-icon-wrapper">
+            <img class="google-icon"
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+          </div>
+          <p class="btn-text">
+            <b>Sign In/Sign Up with google</b>
+          </p>
+        </a>
       </div>
-      
-      <div class="form-field">
-        <input type="password" name="password" placeholder="Password" required/>
-      </div>
-      
-      <div class="form-field">
-        <button class="btn" type="submit">Sign in</button>
-      </div>
-    </form> 
+    </div>
 
-    <p class="form-field">
-      <a href="/users/auth/google"> GOogle Sign In/Sign Up</a>
-    </p>
+  </form>
+
+
 
 </div>
+

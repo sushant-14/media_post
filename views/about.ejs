@@ -1,30 +1,26 @@
-<!-- <link rel="stylesheet" href="/css/about.css"> -->
-
-        <!-- <%= title%> -->
-<!-- <h1> about pages 1</h1> -->
-
-
+<!-- for update common style user -->
+<link rel="stylesheet" href="/css/user-sign.css">
     <% if(user.id == profile_user.id){%>
       <%if(user.avatar){%>
-        <div style="background-color: aliceblue;">
+        <div id="profile-pic">
           <img src="<%= user.avatar%>" alt="<%=user.name%>" width="100">
         </div>
         <%}%>
-        <div id="update">
+        <div id="sign">
         <form action="/users/update/<%=profile_user.id%>" enctype="multipart/form-data" method="post">
                 <h1>Update Profile</h1>
               <div class="form-field">
-                <!-- <input type="email" name="email" placeholder="Email / Username" required/> -->
-                
+                <i class='fas fa-user-alt bgcol'></i>
                 <input type="text" name="name" placeholder="Username" value="<%=profile_user.name%>" required>
               </div>
-              
               <div class="form-field">
+                <i class="fa fa-at bgcol"></i>
                 <input type="email" name="email" placeholder="Your Email" value="<%=profile_user.email%>" required>
                 <!-- <input type="password" name="password" placeholder="Password" required/> -->
               </div>
               <div class="form-field">
-                <input type="file" name="avatar" id="" placeholder="Profile Picture">
+                <i class='far fa-image bgcol'></i>
+                <input type="file" name="avatar" id="" placeholder="Profile Picture"  accept="image/png, image/jpg, image/jpeg"/>
               </div>
               <div class="form-field">
                 <button class="btn" type="submit">Update</button>
@@ -34,32 +30,23 @@
         </div>
     <%}else{%>
         <!-- else show only the profile info -->
-        <div id="update">
-          <div>
-            <img src="<%= profile_user.avatar%>" alt="<%=user.name%>" width="100">
-          </div>
+        <div id="profile-pic">
+          <img src="<%= profile_user.avatar%>" alt="<%=user.name%>" width="100">
+        </div>
+        <div id="sign">
             <form action="/users/update/<%=profile_user.id%>" method="post">
-                    <h1>Friends Profile</h1>
-                    
+                  <h1>Friends Profile</h1>    
                   <div class="form-field">
-                    <!-- <input type="email" name="email" placeholder="Email / Username" required/> -->
-                    <input type="text" name="name" placeholder="Username" value="<%=profile_user.name%>" readonly>
+                    <i class='fas fa-user-alt bgcol'></i>
+                   <input type="text" name="name" value="<%=profile_user.name%>" readonly>
                   </div>
                   
                   <div class="form-field">
-                    <input type="email" name="email" placeholder="Your Email" value="<%=profile_user.email%>" readonly>
-                    <!-- <input type="password" name="password" placeholder="Password" required/> -->
+                    <i class="fa fa-at bgcol"></i>
+                    <input type="email" name="email" value="<%=profile_user.email%>" readonly>
                   </div>
-                  
-                  <!-- <div class="form-field">
-                    <button class="btn" type="submit">Update</button>
-                  </div> -->
-                </form> 
-            
-            </div>
-        <!-- <p><%= profile_user.name%></p>
-        <p><%= profile_user.email%></p> -->
-
+                </form>             
+            </div>>
     <%}%>
 
 

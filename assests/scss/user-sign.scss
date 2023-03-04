@@ -1,0 +1,185 @@
+// same css use in the user sign-in, sign-up and update
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+#sign {
+    $white: #fff;
+    $google-blue: #4285f4;
+    $button-active-blue: #1669F2;
+    $center:center;
+
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: $center;
+    align-items: $center;
+    min-height: 80vh;
+    overflow: hidden;
+
+    form {
+        border: 2px solid $white;
+        background-image: url('/images/background.jpg');
+        background-size: cover;
+        width: 550px;
+        position: relative;
+        padding: 50px;
+        border-radius: 5px 20px 5px;
+
+        h1 {
+            text-align: $center;
+            color: $white;
+            text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px blue;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+        .form-field {
+            display: flex;
+            justify-content: space-between;
+            align-items: $center;
+            margin-bottom: 1rem;
+            position: relative;
+            .bgcol{
+                background-color:$white;
+                border-top-left-radius: 25px;
+                padding: 0.9rem 0.7rem;
+                font-size: 21px;
+            }
+
+            input {
+                font-family: inherit;
+                width: 100%;
+                outline: none;
+                border: none;
+                // background-color: #fff;
+                // border-radius: 4px;
+                display: block;
+                padding: 0.9rem 0.7rem;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                font-size: 17px;
+                color: #4A4A4A;
+            }
+            input[type=file]{   
+                color: black;
+                background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+                outline: none;
+                cursor: pointer;
+                text-shadow: 1px 1px $white;
+                font-weight: 700;
+                font-size: 10pt;
+                margin: auto;
+                &::-webkit-file-upload-button {
+                    visibility: hidden;
+                  }
+                &:hover::before {
+                    border-color: black;
+                  }
+                &:active {
+                    outline: 0;
+                  }
+                &:active::before {
+                    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+                  }
+            }
+
+            .btn {
+                outline: none;
+                border: none;
+                cursor: pointer;
+                display: inline-block;
+                margin: 0 auto;
+                padding: 0.9rem 2.5rem;
+                text-align: $center;
+                background-color: #47AB11;
+                color: $white;
+                border-radius: 4px;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                font-size: 17px;
+            }
+
+
+            .google-btn {
+                width: 250px;
+                height: 42px;
+                margin: auto;
+                background-color: $google-blue;
+                border-radius: 2px;
+                box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+
+                .google-icon-wrapper {
+                    position: absolute;
+                    margin-top: 1px;
+                    margin-left: 1px;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 2px;
+                    background-color: $white;
+                }
+
+                .google-icon {
+                    position: absolute;
+                    margin-top: 11px;
+                    margin-left: 11px;
+                    width: 18px;
+                    height: 18px;
+                }
+
+                .btn-text {
+                    float: right;
+                    margin: 11px 11px 0 0;
+                    color: $white;
+                    font-size: 14px;
+                    letter-spacing: 0.4px;
+                }
+
+                &:hover {
+                    box-shadow: 0 0 6px $google-blue;
+                }
+
+                &:active {
+                    background: $button-active-blue;
+                }
+            }
+        }
+
+    }
+
+}
+#profile-pic{
+    position: absolute;
+    top:25%;
+    margin: auto;
+    img{
+        border-radius: 5px 20px 5px;
+        width: 400px;
+        height:400px;
+        border: 2px solid white;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    #profile-pic{
+        position:absolute;
+        margin: auto;
+        img{
+            height: 300px;
+            width: 300px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1220px) {
+    #profile-pic{
+        position:absolute;
+        margin: auto;
+        img{
+            height: 200px;
+            width: 200px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #profile-pic{
+        display: none;
+    }
+}

@@ -20,6 +20,7 @@ header{
             &:hover{
                 background-color: aqua;
                 color: black;
+                padding: 3px;
             }
         }
         .logo{
@@ -30,9 +31,6 @@ header{
             display: flex;
             gap:25px;
             .circle{
-                // height: 30px;
-                // width: 30px;
-                // background-color: #fff;
                 img{
                     border-radius: 50%;
                     height: 40px;

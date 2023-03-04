@@ -18,7 +18,8 @@ header .navbar {
     color: #fff; }
     header .navbar a:hover {
       background-color: aqua;
-      color: black; }
+      color: black;
+      padding: 3px; }
   header .navbar .logo {
     margin-right: 50px; }
   header .navbar .list {

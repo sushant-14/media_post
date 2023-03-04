@@ -1,36 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
-#sign-up {
+#sign {
   font-family: 'Lato', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
   overflow: hidden; }
-  #sign-up form {
-    border: 2px solid white;
+  #sign form {
+    border: 2px solid #fff;
     background-image: url("/images/background.jpg");
     background-size: cover;
     width: 550px;
     position: relative;
-    padding: 50px; }
-    #sign-up form h1 {
+    padding: 50px;
+    border-radius: 5px 20px 5px; }
+    #sign form h1 {
       text-align: center;
-      color: white;
+      color: #fff;
       text-shadow: 1px 1px 2px black, 0 0 25px gray, 0 0 5px blue;
       text-transform: capitalize;
       margin-bottom: 20px; }
-    #sign-up form .form-field {
+    #sign form .form-field {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1rem;
       position: relative; }
-      #sign-up form .form-field .bgcol {
+      #sign form .form-field .bgcol {
         background-color: #fff;
         border-top-left-radius: 25px;
         padding: 0.9rem 0.7rem;
         font-size: 21px; }
-      #sign-up form .form-field input {
+      #sign form .form-field input {
         font-family: inherit;
         width: 100%;
         outline: none;
@@ -40,7 +41,24 @@
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
         font-size: 17px;
         color: #4A4A4A; }
-      #sign-up form .form-field .btn {
+      #sign form .form-field input[type=file] {
+        color: black;
+        background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+        outline: none;
+        cursor: pointer;
+        text-shadow: 1px 1px #fff;
+        font-weight: 700;
+        font-size: 10pt;
+        margin: auto; }
+        #sign form .form-field input[type=file]::-webkit-file-upload-button {
+          visibility: hidden; }
+        #sign form .form-field input[type=file]:hover::before {
+          border-color: black; }
+        #sign form .form-field input[type=file]:active {
+          outline: 0; }
+        #sign form .form-field input[type=file]:active::before {
+          background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); }
+      #sign form .form-field .btn {
         outline: none;
         border: none;
         cursor: pointer;
@@ -53,14 +71,14 @@
         border-radius: 4px;
         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
         font-size: 17px; }
-      #sign-up form .form-field .google-btn {
+      #sign form .form-field .google-btn {
         width: 250px;
         height: 42px;
         margin: auto;
         background-color: #4285f4;
         border-radius: 2px;
         box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25); }
-        #sign-up form .form-field .google-btn .google-icon-wrapper {
+        #sign form .form-field .google-btn .google-icon-wrapper {
           position: absolute;
           margin-top: 1px;
           margin-left: 1px;
@@ -68,19 +86,49 @@
           height: 40px;
           border-radius: 2px;
           background-color: #fff; }
-        #sign-up form .form-field .google-btn .google-icon {
+        #sign form .form-field .google-btn .google-icon {
           position: absolute;
           margin-top: 11px;
           margin-left: 11px;
           width: 18px;
           height: 18px; }
-        #sign-up form .form-field .google-btn .btn-text {
+        #sign form .form-field .google-btn .btn-text {
           float: right;
           margin: 11px 11px 0 0;
           color: #fff;
           font-size: 14px;
           letter-spacing: 0.4px; }
-        #sign-up form .form-field .google-btn:hover {
+        #sign form .form-field .google-btn:hover {
           box-shadow: 0 0 6px #4285f4; }
-        #sign-up form .form-field .google-btn:active {
+        #sign form .form-field .google-btn:active {
           background: #1669F2; }
+
+#profile-pic {
+  position: absolute;
+  top: 25%;
+  margin: auto; }
+  #profile-pic img {
+    border-radius: 5px 20px 5px;
+    width: 400px;
+    height: 400px;
+    border: 2px solid white; }
+
+@media only screen and (max-width: 1400px) {
+  #profile-pic {
+    position: absolute;
+    margin: auto; }
+    #profile-pic img {
+      height: 300px;
+      width: 300px; } }
+
+@media only screen and (max-width: 1220px) {
+  #profile-pic {
+    position: absolute;
+    margin: auto; }
+    #profile-pic img {
+      height: 200px;
+      width: 200px; } }
+
+@media only screen and (max-width: 1000px) {
+  #profile-pic {
+    display: none; } }

@@ -36,7 +36,7 @@ const path = require('path');
 
 // setting sass
 // for development mode we need to run sass middle ware
-if(env.name=='development'){
+// if(env.name=='development'){
     app.use(sassMiddleware({
         // src:'./assests/scss',
         src:path.join(__dirname,env.assest_path,'scss'),
@@ -46,7 +46,7 @@ if(env.name=='development'){
         outputStyle:'extended',
         prefix:'/css'
     }))
-}
+// }
 
 
 // app.use(express.urlencoded());
